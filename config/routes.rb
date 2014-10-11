@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'blogs/new'
-
-  get 'blogs/create'
 
   root 'home#index'
+
+  resources :blogs
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
