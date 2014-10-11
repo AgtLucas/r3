@@ -13,7 +13,7 @@ $.ajaxSetup({
 
 // Flash message
 var HomeView = React.createClass({
-  render: function () {
+  render : function () {
     return (
       <div>
       <p>{this.props.message}</p>
@@ -44,14 +44,15 @@ var NewBlogView = React.createClass({
     return false;
   },
 
-  render: function () {
+  render : function () {
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
         <input type="text" name="name" id="name" ref="name" placeholder="Nome" />
-        <button><span>Create Blog</span></button>
+        <button type="submit"><span>Create Blog</span></button>
       </form>
       <a href="/">Home</a>
+      </div>
     );
   }
 });
@@ -65,7 +66,7 @@ var Router = Backbone.Router.extend({
   index: function () {
     var self = this;
     React.renderComponent(
-      <HomeView message={self.message}/>
+      <HomeView message={self.message}/>,
       document.getElementById('new-blog')
     );
   },
