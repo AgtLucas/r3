@@ -80,4 +80,6 @@ var Router = Backbone.Router.extend({
 
 var r = new Router();
 
-Backbone.history.start();
+if (!Backbone.History.started) {
+  Backbone.history.start();
+};
