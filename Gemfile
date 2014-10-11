@@ -39,8 +39,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'react-rails'
-# group :test do
-#   gem 'capybara'
-#   gem 'rspec-rails'
-#   gem 'poltergeist'
-# end
+group :test do
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'poltergeist'
+end
