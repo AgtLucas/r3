@@ -55,3 +55,28 @@ var NewBlogView = React.createClass({
     );
   }
 });
+
+var Router = Backbone.Router.extend({
+  message: '',
+  routes: {
+    "": "index",
+    "blogs/new": "new_blog"
+  },
+  index: function () {
+    var self = this;
+    React.renderComponent(
+      <HomeView message={self.message}/>
+      document.getElementById('new-blog')
+    );
+  },
+  new_blog: function () {
+    React.renderComponent(
+      <NewBlogView message={self.message}/>,
+      document.getElementById('new-blog')
+    );
+  }
+});
+
+var r = new Router();
+
+Backbone.history.start();
